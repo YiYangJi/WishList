@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App';
+import App from './App/App';
 
 // Capturamos el contenedor root que hay en el html
 const container = document.getElementById('root');
