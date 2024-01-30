@@ -13,6 +13,7 @@ const InitialWishes = [
 export default function App() {
   const [wishes, setWishes] = useState(InitialWishes);
 
+  // Esto es una funcion flecha que se ejecuta cuando se hace prop
   const onNewWish = (newWish) => {
     setWishes((currentWishes) => [...currentWishes, newWish]);
   };
@@ -20,9 +21,11 @@ export default function App() {
   return (
     <div className="app">
       <h1>My Whishlist</h1>
+      {/* Le pasamos una prop de cualquier nombre y
+      le pasamos una funcion declarada anteriormente */}
       <WishInput onNewWish={onNewWish} />
 
-      <WishList wishes={wishes} />
+      <WishList wishes={wishes} setWishes={setWishes} />
     </div>
   );
 }

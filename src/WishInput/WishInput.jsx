@@ -13,6 +13,8 @@ export default function WishInput({ onNewWish }) {
       };
 
       // Insert a new wish object in the wishes array of the father's component
+      // onNewWish es la funcion del padre que recibe el
+      // hijo en la cabecera, y lo ejecuta cuando lo invocamos
       onNewWish(newWishObject);
 
       setNewWish('');

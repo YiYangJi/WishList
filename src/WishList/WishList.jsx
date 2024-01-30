@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function WishList({ wishes }) {
+export default function WishList({ wishes, setWishes }) {
   return (
     <ul className="wish-list">
-      {wishes.map((wish) => (
+      {wishes.map((wish, i) => (
         <li
           key={wish.id}
           className={`wish-list__item ${
@@ -13,9 +13,13 @@ export default function WishList({ wishes }) {
         >
           <input
             type="checkbox"
-            name=""
             id="{wish.id}"
             checked={wish.completed}
+            onChange={(e) => {
+              const tempWishes = [...wishes];
+              tempWishes[i].completed = e.target.checked;
+              setWishes(tempWishes);
+            }}
           />
           <label htmlFor="{wish.text}">{wish.text}</label>
         </li>
@@ -32,8 +36,10 @@ WishList.propTypes = {
       completed: PropTypes.bool,
     }),
   ),
+  setWishes: PropTypes.func,
 };
 
 WishList.defaultProps = {
   wishes: [],
+  setWishes: () => {},
 };
