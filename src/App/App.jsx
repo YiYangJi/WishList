@@ -25,6 +25,14 @@ export default function App() {
       le pasamos una funcion declarada anteriormente */}
       <WishInput onNewWish={onNewWish} />
       <WishList wishes={wishes} setWishes={setWishes} />
+
+      <button
+        type="button"
+        className="wish-clear"
+        onClick={() => setWishes(wishes.filter((wish) => !wish.completed))}
+      >
+        Archive wishes
+      </button>
     </div>
   );
 }
