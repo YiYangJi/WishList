@@ -24,7 +24,6 @@ export default function App() {
       {/* Le pasamos una prop de cualquier nombre y
       le pasamos una funcion declarada anteriormente */}
       <WishInput onNewWish={onNewWish} />
-
       <WishList wishes={wishes} setWishes={setWishes} />
     </div>
   );
